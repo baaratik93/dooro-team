@@ -12,7 +12,7 @@
             <template v-slot:icon>
               <img src="@/assets/compet.jpg" style="border-radius:50%"  alt="Nos compétences" height="100">
             </template>
-            <v-btn  color="#9CBFD7" width="100%" rounded-md light>
+            <v-btn  color="#A6D7CD" width="100%" rounded light>
               <v-icon >mdi-plus</v-icon><span class="mainSkill">Nos compétences</span>
             </v-btn>
             <v-timeline class="principale mt-5" 
@@ -113,7 +113,7 @@
         <template v-slot:icon>
             <img src="@/assets/patners.png" style="border-radius:50%" height="90" width="90" class="ma-12"/>
         </template>
-        <v-btn  color="#9CBFD7" width="100%" rounded-md light>
+        <v-btn  color="#A6D7CD" width="100%" rounded light>
               <v-icon >mdi-plus</v-icon><span class="mainSkill">Nos partenaires</span>
         </v-btn>
         <TeamPartners class="ml-20"/>

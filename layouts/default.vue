@@ -90,7 +90,6 @@ export default {
         bottom:0;
     }
     #skills {
-        background-color:lightcyan;
         border-radius: 50px;
     }
     #skills .list {

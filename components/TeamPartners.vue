@@ -105,6 +105,6 @@ export default {
 <style scoped>
       .card {
             background-color:lightcyan;
-            border-radius: 10%;
+            border-radius: 15%;
       }
 </style>
