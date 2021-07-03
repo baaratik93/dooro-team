@@ -8,7 +8,7 @@
                     max-width=""
                   >
                     <v-card-text>
-                      <h3>PAPS</h3>
+                      <h3 style="text-align: center">PAPS</h3>
                       <div class="text--primary">
                             <p>
                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, provident exercitationem quidem quos harum possimus rerum, necessitatibus labore fuga quia laborum assumenda culpa earum iure delectus nobis, eaque ratione dicta.
@@ -37,7 +37,7 @@
                     max-width=""
                   >
                     <v-card-text>
-                      <h3>GALSEN - UNLOCK</h3>
+                      <h3 style="text-align: center">GALSEN - UNLOCK</h3>
                       <div class="text--primary">
                             <p>
                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, provident exercitationem quidem quos harum possimus rerum, necessitatibus labore fuga quia laborum assumenda culpa earum iure delectus nobis, eaque ratione dicta.
@@ -67,7 +67,7 @@
                     
                   >
                     <v-card-text>
-                      <h3>ISI</h3>
+                      <h3 style="text-align: center">ISI</h3>
                       <div class="text--primary">
                             <p>
                                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, provident exercitationem quidem quos harum possimus rerum, necessitatibus labore fuga quia laborum assumenda culpa earum iure delectus nobis, eaque ratione dicta.
