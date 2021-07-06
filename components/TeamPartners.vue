@@ -4,7 +4,7 @@
           <v-flex  xs12 sm6 offset-sm3 class="ma-2 partner">
                   <v-card
                     class="card"
-                    elevation=""
+                    elevation="3"
                     max-width=""
                   >
                     <v-card-text>

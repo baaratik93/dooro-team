@@ -9,19 +9,20 @@
         class="white--text mb-5"
         id="skills"
       >
-            <template v-slot:icon class="accent">
+            <template v-slot:icon>
               <img src="@/assets/compet.jpg" style="border-radius:50%"  alt="Nos compétences" height="90" width="90">
             </template>
             
-            <v-btn class="accent" color="#A6D7CD" width="100%" rounded light>
+            <v-btn color="transparent" width="100%" rounded light>
               <span class="mainSkill">Nos compétences</span>
             </v-btn>
-            <v-timeline class="principale mt-5 accent" 
+            <v-timeline class="principale mt-5" 
+
               style="background: #A6D7CD; border-radius: 50px">
                   <v-timeline-item
                   fill-dot
                   class="text-right white--text mb-12"
-                  color="#A6D7CD"
+                  color="transparent"
                   left
                   >
                       <template v-slot:icon>
@@ -97,7 +98,7 @@
         <v-btn  color="#A6D7CD" class="accent" width="100%" rounded light>
               <v-icon >mdi-plus</v-icon><span class="mainSkill">Ils nous font confiance</span>
         </v-btn>
-        <TeamPartners class="ml-20 accent"/>
+        <TeamPartners class="ml-20"/>
       </v-timeline-item>
 
       <v-timeline-item id="contacts"> 

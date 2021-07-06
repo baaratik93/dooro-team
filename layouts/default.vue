@@ -1,16 +1,25 @@
 <template>
     <v-app>
         <!-- v-scroll="onScroll" -->
+    <div class="index mt-12">
+        <h3 class="mt-10">Votre dev multiplateform</h3>
+        <img src="~/assets/logosso.png" width="400px">
+        <p>
+            Le monde appartient à ceux qui se lève tôt.
+            Pourquoi attendre à être membre de la communauté Dooro - Digital.
+            <nuxt-link to="#">Je commence ici</nuxt-link>
+        </p>
+    </div>
        <navigation-drawer :drawer="drawer"  id="drawer" class="hidden-md-and-up"/>
-        <v-app-bar dense class="accent" fixed >
+        <v-app-bar dense color="#FAD512" fixed >
             <v-app-bar-nav-icon class="py-5 my-6 hidden-md-and-up" @click.native.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title class="py-5 my-3 ">Dooro - Digital</v-toolbar-title>
+            <v-toolbar-title class="py-5 my-3 logotitle">D'oro<span>digital</span></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <nuxt-link  v-for="m in menus" :key="m.id" :to="m.link" class="menu hidden-sm-and-down ml-5">
                     <v-icon class="mb-1 pa-1 -2">
                         {{ m.icon }}
                     </v-icon>
-                    <span style="color:white">
+                    <span>
                         {{ m.name }}
                     </span>
                 </nuxt-link>
@@ -22,11 +31,7 @@
                 </v-btn>
         </v-app-bar>
             <nuxt id="main"/>
-        
-        
-        
-        
-    </v-app>
+        </v-app>
 </template>
 <script>
 export default {
@@ -49,24 +54,79 @@ export default {
 }
 </script>
 
-<style>
-    html{
+<style lang="scss">
+ html{
         margin: 0;
         padding: 0;
         /* background-image: url('../assets/main.png');
         background-size: cover;
         background-repeat: repeat-y; */
     }
+    .index {
+        position: absolute;
+        background-image: url("../assets/background1.svg");
+        background-size: cover;
+        background-attachment: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100vw;
+        min-width: 500px;
+        margin: auto;
+        padding: 25px;
+
+        h3 {
+            color: #CDD6D2;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            border: .1px solid #FACA05;
+            max-width: 300px;
+            border-radius: 10px 30px 10px 30px;
+            letter-spacing: 1px;
+            padding: 10px;
+            text-align: center;
+        }
+        img {
+            position: absolute;
+            top: 45%;
+            left: 21%;
+            border-radius: 50%;
+        }
+        p {
+            position: absolute;
+            font-family: 'Arial Narrow Bold', sans-serif;
+            font-size: 25px;
+            color: #5e6569;
+            text-align: center;
+            letter-spacing: 5px;
+            max-width: 450px;
+            margin-top: 3%;
+            right: 2%;
+        }
+    }
+
+    .logotitle {
+        color: #4B555C;
+        font-size: 25px;
+        font-weight: bold;
+
+        span {
+            color: white;
+            letter-spacing: 2px;
+        }
+
+    }
+   
 
     .menu {
-        border: .1px solid black;
-        padding: 3px;
+        border: .1px solid #5e6569;
+        padding: 1px;
         border-radius: 10px;
-        font-size: 20px;
-    }
-    a{
-        
-        color: blanchedalmond;
+        font-size: 15px;
+        span {
+            color: #5e6569;
+            letter-spacing: 3px;
+        }
     }
     
     button {
@@ -74,6 +134,7 @@ export default {
     }
     a {
         text-decoration: none;
+        color: #5e6569;
     }
      /* #particules {
         position: absolute;
@@ -100,7 +161,7 @@ export default {
         border-radius: 50px;
     }
     #skills .list {
-        background-color:lightcyan;
+        background-color:transparent;
         border-radius: 25px;
         margin-right: 25px;
         margin-left: 25px;
@@ -121,9 +182,9 @@ export default {
         font-size: 20px;
         font-stretch: ultra-expanded;
     }
-    #skills .principale {
+    /* #skills .principale {
         background-color:whitesmoke;
-    }
+    } */
     .conteneur {
         background-color: #A6D7CD;
         border-radius: 50px;
