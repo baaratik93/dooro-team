@@ -2,7 +2,6 @@
 <main>
    <v-container class="">
       <team-skills/>
-      <!-- <team-partners/> -->
     </v-container>
 
 </main>
@@ -14,4 +13,3 @@ export default {
   name: 'HomePage',
 }
 </script>
-    TeamSkills

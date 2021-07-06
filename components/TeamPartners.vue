@@ -1,5 +1,5 @@
 <template>
-    <v-container class="mt-4" id="partners">
+    <v-container class="mt-4 conteneur accent">
         <v-layout class="d-flex flex-row justify-space-around">
           <v-flex  xs12 sm6 offset-sm3 class="ma-2 partner">
                   <v-card

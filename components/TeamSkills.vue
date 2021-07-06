@@ -1,26 +1,28 @@
-<template>
-  <v-container id="skills">
+<template> 
+  <v-container class="ml-12">
     <v-timeline
       dense
       clipped
     >
       <v-timeline-item
         fill-dot
-        class="white--text mb-12"
-        large
+        class="white--text mb-5"
+        id="skills"
       >
-            <template v-slot:icon>
-              <img src="@/assets/compet.jpg" style="border-radius:50%"  alt="Nos compétences" height="100">
+            <template v-slot:icon class="accent">
+              <img src="@/assets/compet.jpg" style="border-radius:50%"  alt="Nos compétences" height="90" width="90">
             </template>
-            <v-btn  color="#A6D7CD" width="100%" rounded light>
-              <v-icon >mdi-plus</v-icon><span class="mainSkill">Nos compétences</span>
+            
+            <v-btn class="accent" color="#A6D7CD" width="100%" rounded light>
+              <span class="mainSkill">Nos compétences</span>
             </v-btn>
-            <v-timeline class="principale mt-5" 
+            <v-timeline class="principale mt-5 accent" 
               style="background: #A6D7CD; border-radius: 50px">
                   <v-timeline-item
                   fill-dot
                   class="text-right white--text mb-12"
                   color="#A6D7CD"
+                  left
                   >
                       <template v-slot:icon>
                         <img src="@/assets/js.png" width="200"/>
@@ -30,8 +32,9 @@
 
                   <v-timeline-item
                       fill-dot
-                      class="white--text mb-12"
+                      class="white--text mb-12 hidden-sm-and-down"
                       color="#A6D7CD"
+                      right
                       >
                       <template v-slot:icon>
                           <img src="@/assets/php.png" width="120"/>
@@ -43,6 +46,7 @@
                       fill-dot
                       class="white--text mb-12"
                       color="#A6D7CD"
+                      left
                       >
                       <template v-slot:icon>
                         <img src="@/assets/css.png" width="120"/>
@@ -63,7 +67,7 @@
 
                   <v-timeline-item
                       fill-dot
-                      class="white--text mb-12"
+                      class="mb-12"
                       color="#A6D7CD"
                       >
                       <template v-slot:icon>
@@ -85,38 +89,25 @@
             </v-timeline>
       </v-timeline-item>
 
-      <v-slide-x-transition
-        group
-      >
-        <v-timeline-item
-          v-for="event in timeline"
-          :key="event.id"
-          class="mb-4"
-          color="pink"
-          small
-        >
-          <v-row justify="space-between">
-            <v-col
-              cols="7"
-              v-text="event.text"
-            ></v-col>
-            <v-col
-              class="text-right"
-              cols="5"
-              v-text="event.time"
-            ></v-col>
-          </v-row>
-        </v-timeline-item>
-      </v-slide-x-transition>
 
-      <v-timeline-item>
+      <v-timeline-item id="partners"> 
+        <template v-slot:icon>
+            <img src="@/assets/patners.png" style="border-radius:50%" height="90" width="90" class="ma-5"/>
+        </template>
+        <v-btn  color="#A6D7CD" class="accent" width="100%" rounded light>
+              <v-icon >mdi-plus</v-icon><span class="mainSkill">Ils nous font confiance</span>
+        </v-btn>
+        <TeamPartners class="ml-20 accent"/>
+      </v-timeline-item>
+
+      <v-timeline-item id="contacts"> 
         <template v-slot:icon>
             <img src="@/assets/patners.png" style="border-radius:50%" height="90" width="90" class="ma-12"/>
         </template>
-        <v-btn  color="#A6D7CD" width="100%" rounded light>
-              <v-icon >mdi-plus</v-icon><span class="mainSkill">Nos partenaires</span>
+        <v-btn  color="#A6D7CD" width="100%" class="accent" rounded light>
+              <span class="mainSkill">Demandez un devis</span>
         </v-btn>
-        <TeamPartners class="ml-20"/>
+        <team-devis class="ml-20 mt-5 accent"/>
       </v-timeline-item>
     </v-timeline>
   </v-container>
@@ -126,8 +117,7 @@
  
 export default {
   data() {
-    return {
-    
+    return { 
       js: [
         "list",
         [
@@ -169,7 +159,7 @@ export default {
             title: 'Symfony'
           },
           {
-            src:'cakephp.jpg',
+            src:'cakephp.png',
             title: 'CakePHP'
           },
           {
@@ -177,7 +167,7 @@ export default {
             title: 'WordPress'
           },
           {
-            src:'joomla.jpg',
+            src:'joomla.png',
             title: 'Joomla'
           },
           
@@ -191,7 +181,7 @@ export default {
             title: 'Saas'
           },
           {
-            src:'less.jpg',
+            src:'less.png',
             title: 'Less'
           },
           {

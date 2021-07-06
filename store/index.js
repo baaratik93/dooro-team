@@ -1,4 +1,5 @@
 export const state = () => ({
+    active: false,
     menus: [
         {
             id: 1,
@@ -13,16 +14,22 @@ export const state = () => ({
             link: '#teams'
         },
         {
-            id: 1,
+            id: 3,
             name: 'Skills',
             icon: 'mdi-school-outline',
             link: '#skills'
         },
         {
-            id: 1,
+            id: 4,
             name: 'Partenaires',
             icon: 'mdi-face-agent',
             link: '#partners'
         },
+        {
+            id: 5,
+            name: 'Contacts',
+            icon: 'mdi-face-agent',
+            link: '#contacts'
+        }
     ],
 })
