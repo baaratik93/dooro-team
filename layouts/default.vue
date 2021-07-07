@@ -4,7 +4,7 @@
     <div class="index mt-12">
         <h3 class="mt-10">Votre dev multiplateform</h3>
         <img src="~/assets/logosso.png" width="400px">
-        <p>
+        <p class="">
             Le monde appartient à ceux qui se lève tôt.
             Pourquoi attendre à être membre de la communauté Dooro - Digital.
             <nuxt-link to="#">Je commence ici</nuxt-link>
@@ -67,6 +67,7 @@ export default {
         background-image: url("../assets/background1.svg");
         background-size: cover;
         background-attachment: fixed;
+        z-index: 10;
         top: 0;
         bottom: 0;
         height: 100%;
@@ -76,7 +77,7 @@ export default {
         padding: 25px;
 
         h3 {
-            color: #CDD6D2;
+            color: white;
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 25px;
             border: .1px solid #FACA05;
@@ -94,8 +95,8 @@ export default {
         }
         p {
             position: absolute;
-            font-family: 'Arial Narrow Bold', sans-serif;
-            font-size: 25px;
+            font-family: dscript;
+            font-size: 30px;
             color: #5e6569;
             text-align: center;
             letter-spacing: 5px;
@@ -129,6 +130,11 @@ export default {
         }
     }
     
+
+    @font-face {
+        font-family: "dscript";
+        src: url("../assets/DancingScript-SemiBold.ttf");
+        }
     button {
         text-transform: lowercase;
     }

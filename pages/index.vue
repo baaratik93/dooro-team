@@ -13,6 +13,9 @@ import TeamHome from '~/components/TeamHome.vue'
 
 export default {
   components: { TeamHome },
+  mounted() {
+    console.log(this.$vuetify.breakpoint.name)
+  },
   name: 'HomePage',
 }
 </script>
