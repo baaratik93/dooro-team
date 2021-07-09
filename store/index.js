@@ -17,7 +17,7 @@ export const state = () => ({
             id: 3,
             name: 'Skills',
             icon: 'mdi-school-outline',
-            link: '#skills'
+            link: '#competences'
         },
         {
             id: 4,
