@@ -1,9 +1,12 @@
 <template>
 <main>
    <v-container class="">
+</h1>
     <team-home/>
     <!-- <team-skills/> -->
+    
     </v-container>
+
 
 </main>
 </template>
@@ -12,10 +15,15 @@
 import TeamHome from '~/components/TeamHome.vue'
 
 export default {
-  components: { TeamHome },
-  mounted() {
-    console.log(this.$vuetify.breakpoint.name)
-  },
   name: 'HomePage',
+  components: { TeamHome },
+  data () {
+    return {
+      bp: ''
+    }
+  },
+  mounted() {
+    console.log(this.$vuetify.breakpoint)
+  },
 }
 </script>

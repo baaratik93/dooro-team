@@ -33,3 +33,9 @@ export const state = () => ({
         }
     ],
 })
+
+export const mutations = {
+    SET_DIALOG(state, dialog) {
+        state.active = dialog
+    }
+}
