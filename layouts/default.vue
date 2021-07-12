@@ -1,46 +1,65 @@
 <template>
     <v-app>
+    <particles-animate style="z-index: 11;position: sticky;"/>
         <!-- v-scroll="onScroll" -->
     <div id="accueil" class="index mt-12 d-flex flex-column">
-        <h2 class="mt-10 hidden-sm-and-down" v-if="!activate">Votre dev en temps réel</h2>
+        <h2 class="mt-10 h-title hidden-sm-and-down" v-if="!activate">Votre dev en temps réel</h2>
+          <span class="h-title hidden-md-and-up">Votre dev en temps réel</span>
+
         <img src="~/assets/logosso.png" width="350px">
-        <p v-if="!activate">
+        <p class="h-title" v-if="!activate">
             Le monde appartient à ceux qui se lève tôt.
             Pourquoi attendre à être membre de la communauté Dooro - Digital.
             <nuxt-link to="#"><button @click.prevent="openDialog">Je commence ici</button></nuxt-link>
         </p>
     </div>
-    <div class="skill" id="competences">
-        <h2>Compétences</h2>
-             <v-timeline class="timeline">
-                <v-timeline-item>
-                    <template v-slot:icon>
-                            <img src="~/assets/php.png" width="80px" height="80px" />
-                    </template>
-                    <time-line class="ml-13" :liste="php"/>
-                </v-timeline-item>
-                <v-timeline-item color="#748B9C" class="text-right">
-                    <template v-slot:icon>
-                            <img src="~/assets/js.png" height="90" width="190"/>
-                    </template>
-                    <time-line class="mr-12" :liste="js"/>
-                </v-timeline-item>
-                <v-timeline-item>
-                    <template v-slot:icon>
-                            <img src="~/assets/css.png" height="95px" width="150px"/>
-                    </template>
-                    <time-line class="ml-13 pa-1" :liste="css"/>
-                </v-timeline-item>
-              </v-timeline>
-    </div>
+    <section class="skill" id="competences">
+        <h2 class="h-title hidden-sm-and-down">Compétences</h2>
+        <div style="text-align:center"><span class="h-title mt-5 hidden-md-and-up">Compétences</span></div>
+
+        <v-container>
+            <v-layout row wrap class="ma-5">
+                <v-flex xs12 sm6 md4 lg4>
+                      <time-line class="ma-3" image="js.png" name="JScript" :liste="js"/>
+                </v-flex>
+                <v-flex xs12 sm6 md4 lg4>
+                      <time-line class="ma-3" image="js.png" name="PHP" :liste="php"/>
+                </v-flex>
+                <v-flex xs12 sm6 md4 lg4>
+                      <time-line class="ma-3" image="css.png" name="Styling" :liste="css"/>
+                </v-flex>
+            </v-layout>
+            <v-layout id="#teams" class="a-5" row wrap>
+                <h2 class="h-title hidden-sm-and-down"> All team members</h2>
+                <v-flex xs10 sm10 class="mx-auto">
+                    <h3 class="mx-auto h-title hidden-md-and-up">Tous les membres</h3>
+                </v-flex>
+                <v-flex xs12 sm6 md4 lg3 >
+                  <team-member/>
+                </v-flex>
+                <v-flex xs12 sm6 md4 lg3 >
+                  <team-member/>
+                </v-flex>
+                <v-flex xs12 sm6 md4 lg3 >
+                  <team-member/>
+                </v-flex>
+                <v-flex xs12 sm6 md4 lg3 >
+                  <team-member/>
+                </v-flex>
+                <v-flex xs12 sm6 md4 lg3 >
+                  <team-member/>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </section>
     <user-form/>
        <navigation-drawer :drawer="drawer"  id="drawer" class="hidden-md-and-up"/>
-        <v-app-bar dense color="#FAD512" fixed style="z-index: 15">
+        <v-app-bar dense color="#90CAF9" fixed style="z-index: 15; opacity: .9">
             <v-app-bar-nav-icon class="py-5 my-6 hidden-md-and-up" @click.native.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title class="py-5 my-3 logotitle"><nuxt-link to="#accueil">D'oro<span>digital</span></nuxt-link></v-toolbar-title>
+            <v-toolbar-title class="py-5 my-3 logotitle"><nuxt-link to="#accueil">NoS<span>Code</span></nuxt-link></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <nuxt-link  v-for="m in menus" :key="m.id" :to="m.link" class="menu hidden-sm-and-down ml-5">
-                    <v-icon class="mb-1 pa-1 -2">
+                    <v-icon class="mb-1 pa-1 -2" color="#1976D2">
                         {{ m.icon }}
                     </v-icon>
                     <span>
@@ -48,14 +67,15 @@
                     </span>
                 </nuxt-link>
                 <div class="py-2">
-                    <v-btn icon to="auth/login" @click="$emit('alert')" class="menu ml-10 py-2 my-3">
-                        <v-icon>mdi-login</v-icon>
+                    <v-btn icon to="auth/login" class="menu ml-10 py-2 my-3">
+                        <v-icon color="#1976D2">mdi-login</v-icon>
                     </v-btn>
-                    <v-btn icon class="menu ml-1 p2-5 my-3">
-                        <v-icon>mdi-account</v-icon>
+                    <v-btn icon class="menu ml-1 py-2 my-3">
+                        <v-icon color="#1976D2">mdi-account</v-icon>
                     </v-btn>
                 </div>
         </v-app-bar>
+        <animate-logo/>
             <nuxt id="main"/>
         </v-app>
 </template>
@@ -72,7 +92,7 @@ export default {
           {
             src:'vue.png',
             title: 'Vue.js/Nuxt.js',
-            skill: 75
+            skill: 80
           },
           {
             src:'react.png',
@@ -178,6 +198,7 @@ export default {
  html{
         margin: 0;
         padding: 0;
+        opacity: .9;
     }
     .timeline {
         max-width: 80%;
@@ -186,12 +207,12 @@ export default {
     }
     .index {
         position: absolute;
-        background-image: url("../assets/background1.svg");
+        background-image: url("../assets/background2.svg");
         background-size: cover;
         background-attachment: fixed;
         z-index: 10;
         top: 0;
-        height: 120%;
+        height: 125%;
         width: 100vw;
         min-width: 500px;
         margin: auto;
@@ -219,10 +240,9 @@ export default {
             position: absolute;
             left: 0;
             font-family: biorythme;
-            font-size: 42px;
+            font-size: 22px;
             max-width: 600px;
-            min-width: 200px;
-            border-radius: 10px 30px 10px 30px;
+            min-width: 400px;
             letter-spacing: 1px;
             color: white;
             transform: translateY(350%) translateX(-44%) rotate(-90deg);
@@ -230,17 +250,15 @@ export default {
         }
     .skill {
         position: absolute;
-        background-color: #748B9C;
-        top: 80%;
-        z-index: 30;
-        width: 110%;
+        background-color: #90CAF9;
+        width: 100%;
         top: 125%;
-        height: 1300px;
+        height: 4600px;
         transform: translate(-50% -50%) rotate(-190deg);
         z-index: 10;
+        opacity: 1;
         h2 {
-            letter-spacing: 30px;
-            margin: 55px 0;
+            letter-spacing: 10px;
         }
     }
 
@@ -250,19 +268,30 @@ export default {
         font-weight: bold;
 
         span {
-            color: white;
+            color: #F9FBE7;
             letter-spacing: 2px;
         }
 
+    }
+
+    .h-title{
+      margin: auto;
+      padding: 10px;
+      border-radius: 15px;
+      color: #F9FBE7;
+      font-size: 35px;
+      letter-spacing: 3px;
+      font-family: lato;
     }
    
 
     .menu {
         padding: 1px;
         border-radius: 10px;
-        font-size: 12px;
+        font-size: 15px;
         span {
-            color: #5e6569;
+            // color: #5e6569;
+            color: #F9FBE7;
             letter-spacing: 3px;
 
             
