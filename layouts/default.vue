@@ -54,7 +54,7 @@
     </section>
     <user-form/>
        <navigation-drawer :drawer="drawer"  id="drawer" class="hidden-md-and-up"/>
-        <v-app-bar dense class="accent" fixed style="z-index: 15;">
+        <v-app-bar dense class="secondary" fixed style="z-index: 15;">
             <v-toolbar-title class="py-5 my-3 logotitle"><nuxt-link to="#accueil"><span class="blue--text">NoS</span><span>Code</span></nuxt-link></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <nuxt-link  v-for="m in menus" :key="m.id" :to="m.link" class="menu hidden-sm-and-down ml-5">
@@ -201,7 +201,9 @@ export default {
         $secondary: #f06700;
         $accent: #088b86;
         $error: #b71c1c;
-
+body {
+        background: $secondary;
+}
  html{
         margin: 0;
         padding: 0;
@@ -326,14 +328,18 @@ export default {
       }
       25% {
               width: 99vw;
-
+              background-image: url("../assets/background3.svg");
+              background-size: cover;
       }
       50% {
         width: 98vw;
-    
+        background-image: url("../assets/background3.svg");
+              background-size: cover;
       }
       75% {
         width: 97vw;
+        background-image: url("../assets/background3.svg");
+              background-size: cover;
       }
       100% {
         width: 96vw;
