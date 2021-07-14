@@ -1,6 +1,6 @@
 <template>
     <div class="anilogo">
-        <h1>No Spaghetti Code</h1>
+        No Spaghetti Code
     </div>
 </template>
 
@@ -28,6 +28,7 @@ export default {
             letter-spacing:10px;
             color:#0288D1;
             font-size: 30px;
+            display: none;
         }
         20%{
             letter-spacing:5px;
@@ -38,11 +39,13 @@ export default {
             letter-spacing:10px;
             color:#29B6F6;
             font-size: 20px;
+            display: 0;
         }
         60%{
             letter-spacing:5px;
             color:#4FC3F7;
             font-size: 15px;
+            display: 0;
         }
         80%{
             letter-spacing:10px;

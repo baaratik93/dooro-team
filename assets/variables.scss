@@ -1,7 +1,6 @@
-// assets/variables.scss
-
-// Variables you want to modify
 $btn-border-radius: 0px;
 
-// Modifying a SASS map variable
+// If you need to extend Vuetify SASS lists
 $material-light: ( cards: blue );
+
+@import '~vuetify/src/styles/styles.sass';

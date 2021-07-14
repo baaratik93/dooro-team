@@ -9,8 +9,8 @@
         <img src="~/assets/logosso.png" width="350px">
         <p class="h-title" v-if="!activate">
             Le monde appartient à ceux qui se lève tôt.
-            Pourquoi attendre à être membre de la communauté Dooro - Digital.
-            <nuxt-link to="#"><button @click.prevent="openDialog">Je commence ici</button></nuxt-link>
+            Pourquoi attendre à être membre de la communauté NoSCode.<br>
+            <v-btn class="secondary" @click.prevent="openDialog">J'explore</v-btn>
         </p>
     </div>
     <section class="skill" id="competences">
@@ -23,7 +23,7 @@
                       <time-line class="ma-3" image="js.png" name="JScript" :liste="js"/>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg4>
-                      <time-line class="ma-3" image="js.png" name="PHP" :liste="php"/>
+                      <time-line class="ma-3" image="php.png" name="PHP" :liste="php"/>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg4>
                       <time-line class="ma-3" image="css.png" name="Styling" :liste="css"/>
@@ -54,25 +54,26 @@
     </section>
     <user-form/>
        <navigation-drawer :drawer="drawer"  id="drawer" class="hidden-md-and-up"/>
-        <v-app-bar dense color="#90CAF9" fixed style="z-index: 15; opacity: .9">
-            <v-app-bar-nav-icon class="py-5 my-6 hidden-md-and-up" @click.native.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title class="py-5 my-3 logotitle"><nuxt-link to="#accueil">NoS<span>Code</span></nuxt-link></v-toolbar-title>
+        <v-app-bar dense class="accent" fixed style="z-index: 15;">
+            <v-toolbar-title class="py-5 my-3 logotitle"><nuxt-link to="#accueil"><span class="blue--text">NoS</span><span>Code</span></nuxt-link></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <nuxt-link  v-for="m in menus" :key="m.id" :to="m.link" class="menu hidden-sm-and-down ml-5">
-                    <v-icon class="mb-1 pa-1 -2" color="#1976D2">
+                    <v-icon class="mb-1 pa-1 -2" color="primary">
                         {{ m.icon }}
                     </v-icon>
-                    <span>
+                    <span class="primary--text darken-4">
                         {{ m.name }}
                     </span>
                 </nuxt-link>
                 <div class="py-2">
                     <v-btn icon to="auth/login" class="menu ml-10 py-2 my-3">
-                        <v-icon color="#1976D2">mdi-login</v-icon>
+                        <v-icon color="primary">mdi-login</v-icon>
                     </v-btn>
                     <v-btn icon class="menu ml-1 py-2 my-3">
-                        <v-icon color="#1976D2">mdi-account</v-icon>
+                        <v-icon color="primary">mdi-account</v-icon>
                     </v-btn>
+            <v-app-bar-nav-icon class="py-2 my-3 hidden-md-and-up" @click.native.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
                 </div>
         </v-app-bar>
         <animate-logo/>
@@ -195,10 +196,22 @@ export default {
 </script>
 
 <style lang="scss">
+
+        $primary: #ffffff;
+        $secondary: #f06700;
+        $accent: #088b86;
+        $error: #b71c1c;
+
  html{
         margin: 0;
         padding: 0;
         opacity: .9;
+    }
+    .drawer {
+      z-index: 25;
+    }
+    .notdrawer {
+      z-index: 1;
     }
     .timeline {
         max-width: 80%;
@@ -207,15 +220,17 @@ export default {
     }
     .index {
         position: absolute;
-        background-image: url("../assets/background2.svg");
+        background-image: url("../assets/background3.svg");
         background-size: cover;
         background-attachment: fixed;
         z-index: 10;
         top: 0;
         height: 125%;
         width: 100vw;
-        min-width: 500px;
+        min-width: 352px;
         margin: auto;
+        transition: all 10s ease;
+        animation: nocode 5s linear 2s infinite alternate;
         img {
             position: absolute;
             top: 55%;
@@ -227,8 +242,7 @@ export default {
             font-family: Lato;
             font-size: 18px;
             font-weight: bold;
-            // color: #5e6569;
-            color: #FAFAFA;
+            color: $primary;
             text-align: center;
             letter-spacing: 1px;
             max-width: 450px;
@@ -246,11 +260,11 @@ export default {
             letter-spacing: 1px;
             color: white;
             transform: translateY(350%) translateX(-44%) rotate(-90deg);
-            // animation: animate 8s linear infinite;
+            // animation: animate .8s linear 2s infinite alternate;
         }
     .skill {
         position: absolute;
-        background-color: #90CAF9;
+        background-color: $accent;
         width: 100%;
         top: 125%;
         height: 4600px;
@@ -278,7 +292,7 @@ export default {
       margin: auto;
       padding: 10px;
       border-radius: 15px;
-      color: #F9FBE7;
+      color: $primary;
       font-size: 35px;
       letter-spacing: 3px;
       font-family: lato;
@@ -313,84 +327,105 @@ export default {
         text-decoration: none;
         color: #5e6569;
     }
-     /* #particules {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-    } */
-    #main {
-        position: absolute;
-        top: 0;
-        bottom: 1%;;
-        padding: 10% 5%;
+    @keyframes nocode {
+      0% {
+              width: 100vw;
+      }
+      25% {
+              width: 99vw;
+
+      }
+      50% {
+        width: 98vw;
+    
+      }
+      75% {
+        width: 97vw;
+      }
+      100% {
+        width: 96vw;
+    
+      }
+      75% {
+              width: 97vw;
+
+      }
+      50% {
+        width: 98vw;
+    
+      }
+      25% {
+        width: 99vw;
+      }
+      0% {
+        width: 100vw;
+    
+      }
+      
     }
-    /* 
-    #header {
+     /* 
+    #footer { 
         position: absolute;
-        left: 1px;
-        right: 1px;
-    }*/
-    // #footer { 
-    //     position: absolute;
-    //     bottom:0;
-    // }
-    // #skills {
-    //     border-radius: 50px;
-    // }
-    // #skills .list {
-    //     background-color:transparent;
-    //     border-radius: 25px;
-    //     margin-right: 25px;
-    //     margin-left: 25px;
+        bottom:0;
+    }
+    #skills {
+        border-radius: 50px;
+    }
+    #skills .list {
+        background-color:transparent;
+        border-radius: 25px;
+        margin-right: 25px;
+        margin-left: 25px;
         
-    // }
-    // #skills .list li {
-    //     color: white;
-    // }
-    // #skills span .mainSkill{
-    //     color: #f6f8f8;
-    //     font-family: Georgia, 'Times New Roman', Times, serif;
-    //     word-spacing: 20px;
-    //     letter-spacing: 10px;
+    }
+    #skills .list li {
+        color: white;
+    }
+    #skills span .mainSkill{
+        color: #f6f8f8;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        word-spacing: 20px;
+        letter-spacing: 10px;
         
-    // }
-    // #skills span {
-    //     color: #1CB9D7;
-    //     font-size: 20px;
-    //     font-stretch: ultra-expanded;
-    // }
-    // /* #skills .principale {
-    //     background-color:whitesmoke;
-    // } */
-    // .conteneur {
-    //     background-color: #A6D7CD;
-    //     border-radius: 50px;
-    // }
-    // @keyframes animate {
-    //     0% {
-    //         letter-spacing: 1px;
-    //         height: 10px;
-    //     }
+    }
+    #skills span {
+        color: #1CB9D7;
+        font-size: 20px;
+        font-stretch: ultra-expanded;
+    }
+    #skills .principale {
+        background-color:whitesmoke;
+    } 
+    .conteneur {
+        background-color: #A6D7CD;
+        border-radius: 50px;
+    }
+    @keyframes animate {
+        0% {
+            letter-spacing: 1px;
+            height: 10px;
+        }
 
-    //     25% {
-    //         letter-spacing: 2px;
-    //         font-size: 10px;
-    //         height: 20px;
+        25% {
+            letter-spacing: 2px;
+            font-size: 10px;
+            height: 20px;
 
-    //     }
+        }
 
-    //     75% {
-    //         letter-spacing: 3px;
-    //         font-size: 12px;
-    //         height: 30px;
-    //     }
+        75% {
+            letter-spacing: 3px;
+            font-size: 12px;
+            height: 30px;
+        }
 
-    //     100% {
-    //         letter-spacing: 4px;
-    //         font-size: 18px;
-    //         background-color: yellowgreen;
-    //         height: 40px;
+        100% {
+            letter-spacing: 4px;
+            font-size: 18px;
+            background-color: yellowgreen;
+            height: 40px;
 
-    //     }
-    // }
+        }
+    }
+    */
 </style>
