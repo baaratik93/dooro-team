@@ -42,10 +42,10 @@
                     },
                     particles: {
                         color: {
-                            value: '#ffffff'
+                            value: '#fbfd08'
                         },
                         links: {
-                            color: '#ffffff',
+                            color: '#fbfd08',
                             distance: 150,
                             enable: true,
                             opacity: 0.5,

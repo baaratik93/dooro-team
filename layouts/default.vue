@@ -258,7 +258,6 @@ export default {
             max-width: 600px;
             min-width: 400px;
             letter-spacing: 1px;
-            color: white;
             transform: translateY(350%) translateX(-44%) rotate(-90deg);
             // animation: animate .8s linear 2s infinite alternate;
         }
@@ -277,12 +276,10 @@ export default {
     }
 
     .logotitle {
-        color: #4B555C;
         font-size: 25px;
         font-weight: bold;
 
         span {
-            color: #F9FBE7;
             letter-spacing: 2px;
         }
 
@@ -304,11 +301,7 @@ export default {
         border-radius: 10px;
         font-size: 15px;
         span {
-            // color: #5e6569;
-            color: #F9FBE7;
             letter-spacing: 3px;
-
-            
         }
     }
 

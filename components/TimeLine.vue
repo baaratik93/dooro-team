@@ -20,7 +20,7 @@
             </v-list-item>
     </v-list>
     <v-card-title color="blue darken-4" class="mx-auto blue lighten-4">
-        <span class="mx-10" style="color:#1E88E5;font-family:lato;font-size: 35px;letter-spacing:5px;">{{ name }}</span>        
+        <span class="mx-10" style="font-family:lato;font-size: 30px;letter-spacing:5px;">{{ name }}</span>        
         <v-avatar>
             <img :src="getUrlImage(image)"/>
         </v-avatar>
