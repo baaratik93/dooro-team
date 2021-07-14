@@ -54,8 +54,8 @@
     </section>
     <user-form/>
        <navigation-drawer :drawer="drawer"  id="drawer" class="hidden-md-and-up"/>
-        <v-app-bar dense class="secondary" fixed style="z-index: 15;">
-            <v-toolbar-title class="py-5 my-3 logotitle"><nuxt-link to="#accueil"><span class="blue--text">NoS</span><span>Code</span></nuxt-link></v-toolbar-title>
+        <v-app-bar dense class="accent" fixed style="z-index: 15;">
+            <v-toolbar-title class="py-5 my-3 logotitle"><nuxt-link to="#accueil"><span class="secondary--text">NoS</span><span>Code</span></nuxt-link></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <nuxt-link  v-for="m in menus" :key="m.id" :to="m.link" class="menu hidden-sm-and-down ml-5">
                     <v-icon class="mb-1 pa-1 -2" color="primary">
