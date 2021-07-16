@@ -44,9 +44,9 @@ export default {
   axios: {},
   
   vuetify: {
-    //  customVariables: ['~/assets/variables.scss']
   },
+  build: {
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  }
   
 }

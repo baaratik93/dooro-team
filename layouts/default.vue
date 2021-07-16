@@ -1,16 +1,16 @@
 <template>
-    <v-app>
+    <v-app id="particle" v-scroll="onScroll">
+    
     <particles-animate style="z-index: 11;position: sticky;"/>
-        <!-- v-scroll="onScroll" -->
+    <img id="bird" style="position: absolute; z-index: 14;" src="~/assets/bird.png">
     <div id="accueil" class="index mt-12 d-flex flex-column">
         <h2 class="mt-10 h-title hidden-sm-and-down" v-if="!activate">Votre dev en temps réel</h2>
           <span class="h-title hidden-md-and-up">Votre dev en temps réel</span>
 
-        <img src="~/assets/logosso.png" width="350px">
-        <p class="h-title" v-if="!activate">
-            Le monde appartient à ceux qui se lève tôt.
-            Pourquoi attendre à être membre de la communauté NoSCode.<br>
-            <v-btn class="secondary" @click.prevent="openDialog">J'explore</v-btn>
+        <img src="~/assets/logosso.png" id="logo" width="350px">
+        <p class="" v-if="!activate">
+            Apprenez à coder avec des méthodes super clean ou confiez-nous votre projet digital.<br>
+            <v-btn class="mt-5 secondary" @click.prevent="openDialog">J'explore</v-btn>
         </p>
     </div>
     <section class="skill" id="competences">
@@ -81,6 +81,7 @@
         </v-app>
 </template>
 <script>
+
 export default {
     data() {
         return {
@@ -177,8 +178,20 @@ export default {
         }
     },
     methods: {
-        onScroll(e) {
-            console.log(e.target)
+        onScroll() {
+            const bird = document.getElementById("bird")
+            const logo = document.getElementById("logo")
+            let val  = window.scrollY;
+            bird.style.position = "absolute"
+            bird.style.width = val * 0.30 + 'px'
+            bird.style.transform = `translate(${val * 0.35 + 2}%,${val * -0.35 + 2}%)`
+            bird.style.top = `${val * 0.20 + 50}%`
+
+            // logo.style.position = "absolute"
+            // logo.style.top = `${val * 0.25}%`
+            // logo.style.width = val * 0.40 + 60 + 'px'
+            // logo.style.transform = `translate(${val}px, ${-val}px)`
+
         },
         openDialog (){
             this.$store.commit("SET_DIALOG", true)
@@ -233,6 +246,16 @@ body {
         margin: auto;
         transition: all 10s ease;
         animation: nocode 5s linear 2s infinite alternate;
+
+        &::before {
+        content: '';
+        top: 0%;
+        right: 0%;
+        position: absolute;
+        height: 125%;
+        width: 1000vw;
+        min-width: 352px;
+        }
         img {
             position: absolute;
             top: 55%;
