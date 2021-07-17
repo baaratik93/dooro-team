@@ -13,17 +13,17 @@ module.exports = {
             // Requires sass-loader@^7.0.0
             options: {
               // This is the path to your variables
-              data: "@import '@/styles/variables.scss'"
+              data: "@import '@/assets/variables.scss'"
             },
             // Requires sass-loader@^8.0.0
             options: {
               // This is the path to your variables
-              prependData: "@import '@/styles/variables.scss'"
+              prependData: "@import '@/assets/variables.scss'"
             },
             // Requires >= sass-loader@^9.0.0
             options: {
               // This is the path to your variables
-              additionalData: "@import '@/styles/variables.scss'"
+              additionalData: "@import '@/assets/variables.scss'"
             },
           },
         ],
@@ -40,17 +40,17 @@ module.exports = {
             // Requires sass-loader@^7.0.0
             options: {
               // This is the path to your variables
-              data: "@import '@/styles/variables.scss';"
+              data: "@import '@/assets/variables.scss';"
             },
             // Requires sass-loader@^8.0.0
             options: {
               // This is the path to your variables
-              prependData: "@import '@/styles/variables.scss';"
+              prependData: "@import '@/assets/variables.scss';"
             },
             // Requires sass-loader@^9.0.0
             options: {
               // This is the path to your variables
-              additionalData: "@import '@/styles/variables.scss';"
+              additionalData: "@import '@/assets/variables.scss';"
             },
           },
         ],
