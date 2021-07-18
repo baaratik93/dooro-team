@@ -44,5 +44,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+    
 </style>
+

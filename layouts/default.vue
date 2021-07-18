@@ -184,7 +184,7 @@ export default {
             let val  = window.scrollY;
             bird.style.position = "absolute"
             bird.style.width = val * 0.30 + 'px'
-            bird.style.transform = `translate(${val * 0.35 + 2}%,${val * -0.35 + 2}%)`
+            bird.style.transform = `translate(${val * 0.35 + 2}%,${val * -0.35}%)`
             bird.style.top = `${val * 0.20 + 50}%`
 
             // logo.style.position = "absolute"
